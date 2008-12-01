@@ -1,0 +1,19 @@
+[% INCLUDE header.tt %]
+
+<div id="queue">
+[% INCLUDE queue.tt %]
+</div>
+
+<div id="status">
+[% INCLUDE status.tt %]
+</div>
+
+<div id="newzbin">
+[% INCLUDE newzbin.tt %]
+</div>
+
+<div id="log">
+[% INCLUDE log.tt %]
+</div>
+
+[% INCLUDE footer.tt %]

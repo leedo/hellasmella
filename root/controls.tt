@@ -1,0 +1,9 @@
+	<ul>
+		[% IF status.is_paused %]
+		<li><a onclick="return restart()" href="[% root | url %]continue">continue</a></li>
+		[% ELSE %]
+		<li><a onclick="return pause()" href="[% root | url %]pause">pause</a></li>
+		[% END %]
+		<li class="last">
+			<a href="[% root | url %]clear" title="clear queue, excluding current download" onclick="return clearall()">clear</a></li>
+	</ul>

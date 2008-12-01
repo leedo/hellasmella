@@ -1,0 +1,38 @@
+<h2>Add Item</h2>
+
+<div class="controls">
+	<ul>
+		<li><a href="#" onclick="toggle_form('nzb_upload')">nzb upload</a></li>
+		<li><a href="#" onclick="toggle_form('nzbid')">add nzbid</a></li>
+		<li class="default last"><a href="#" onclick="toggle_form('newzbin_search')">newzbin search</a></li>
+	</ul>
+</div>
+
+<div id="nzbid" class="form">
+<form method="post" action="[% root | url %]add" onsubmit="return addmsgid($('msgid').value,true)">
+	<input type="text" style="width:100px;" name="msgid" id="msgid"[% IF c.req.params.msgid %] value="[% c.req.params.msgid %]"[% END %]/>
+	<button type="submit" value="submit" id="addsubmit">add nzbid</button>
+</form>
+</div>
+
+<div id="newzbin_search" class="form default">
+<form method="get" action="searchr" onsubmit="return dosearch()" id="search">
+	<input type="text" name="q" style="width:250px" id="q" [% IF c.req.params.q %] value="[% c.req.params.q | html %]" [% END %]/>
+	<select name="category" id="category">
+	[% FOR category IN categories %]
+	<option value="[% category.value.id | html %]">[% category.key | html %]</option>
+	[% END %]
+	</select>
+
+	<button type="submit" value="submit" id="searchsubmit">search</button>
+</form>
+<ul class="results" id="newzbin_results">
+[% IF results %]
+[% INCLUDE search.tt %]
+[% END %]
+</ul>
+</div>
+
+<div id="nzb_upload" class="form">
+<iframe style="width:100%;border:none;height:34px;overflow:hidden;" scrolling="no" src="upload_form"></iframe>
+</div>

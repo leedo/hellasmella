@@ -1,0 +1,25 @@
+CONFIGURATION
+
+Before you install HellaSmella make sure that you have edited 'hellasmella.yml'!
+
+You will need to set at least one username and password which is used
+to access hellanzb through your browser. You will also need to configure your
+hellanzb daemon IP, port, and password. Optionally you can set a Newzbin login
+and password.
+
+
+INSTALLATION
+
+Run 'perl Makefile.PL'. This will let you know if you are missing any dependencies, 
+and ask if you want to install them via CPAN. Next run 'make' and then as root
+run 'make install'. This will install the required files into /usr/local/.
+
+
+SETTING UP YOUR WEBSERVER
+
+HellaSmella is able to run as a CGI script, FastCGI application, or as a mod_perl handler.
+I run it as a FastCGI script that is spawned from lighttpd. You can find my configuration
+in the ex/ directory.
+
+For other deployment options take a look at the Catalyst Cookbook on CPAN: 
+http://search.cpan.org/search?query=catalyst%3A%3Amanual%3A%3Acookbook&mode=all

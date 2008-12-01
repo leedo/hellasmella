@@ -1,0 +1,51 @@
+<h2>Status</h2>
+<dl>
+	<dt>State</dt>
+	<dd>[% IF ! status.currently_downloading.0 %]idle[% ELSIF status.is_paused %]paused[% ELSE %]downloading[% END %]</dd>
+	[% IF status.currently_downloading.0 %]
+	<dt>Currently Downloading</dt>
+	<dd>
+		[% FOR current IN status.currently_downloading %]
+			[% current.nzbName %]
+		[% END %]
+	</dd>
+	<dt>Progress</dt>
+	<dd>
+		<div class="progressbar">
+			<div class="progress" style="width:[% status.percent_complete %]%"></div>
+		<div class="progresstext">
+[% status.percent_complete %]% <span style="font-size:0.9em">([% status.queued_mb %]MB remaining)</span>
+		</div>
+			
+		</div>
+		
+	</dd>
+	<dt>Rate</dt>
+	<dd>[% status.rate %]KB/s</dd>
+	<dt>Time Remaining</dt>
+	<dd>
+		[% IF status.time_remaining %]
+			[% IF status.time_remaining.hours > 0 %]
+				[% status.time_remaining.hours %] hour[% IF status.time_remaining.hours > 1 %]s[% END %]
+			[% END %]
+			[% IF status.time_remaining.minutes > 0 %]
+				[% IF status.time_remaining.hours > 0 %]and[% END %]
+				[% status.time_remaining.minutes %] minute[% IF status.time_remaining.minutes > 1 %]s[% END %]
+			[% END %]
+		[% ELSE %]
+		n/a
+		[% END %]
+	[% END %]
+	[% IF status.currently_processing.0 %]
+	<dt class="processing">Currently Processing</dt>
+	<dd class="processing">
+		[% FOR current IN status.currently_processing %]
+			[% current.nzbName %]
+		[% END %]
+	</dd>
+	[% END %]
+</dl>
+
+[% IF status.currently_downloading.0 %]
+<div id="speedplot" style="width:200px;height:100px;margin-top:10px"></div>
+[% END %]

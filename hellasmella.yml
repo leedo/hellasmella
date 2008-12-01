@@ -1,0 +1,27 @@
+---
+name: HellaSmella
+
+# login info to be used when accessing THIS web application
+#
+# In the example below the username is "hellanzb" and the
+# password is "hella"
+
+authentication:
+    users:
+        hellanzb:
+            password: "hella"
+
+# connection info for talking to HellaNZB
+# password and port must be set in your hellanzb.conf file
+
+Model::Hellanzb:
+    location: "http://hellanzb:hella@192.168.1.100:8760"
+
+
+# Newzbin.com login info and cookie location
+
+Model::Newzbin:
+    username: "user"
+    password: "pass"
+
+nzb_directory: "/home/leedo/incoming/nzb/daemon.queue/"

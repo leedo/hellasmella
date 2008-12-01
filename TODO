@@ -1,0 +1,3 @@
+- more detailed search results
+- log overview (warning/error counts)
+- fix queueitems that get added without size or status

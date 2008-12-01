@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="[% root %]static/css/main.css" />
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+				text-align: left;
+			}
+			p {
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+<p>Failed to uploaded nzb file! <a href="upload_form">Try again</a>
+</body>
+</html>

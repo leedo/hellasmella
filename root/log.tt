@@ -1,0 +1,8 @@
+<h2>Log <span class="note">(most recent entries on top)</span></h2>
+<ul id="loglist">
+[% FOR log_entry IN status.log_entries.reverse %]
+	[% FOR key IN log_entry.keys %]
+	<li class="[% key FILTER lower %]">[% log_entry.$key %]</li>
+	[% END %]
+[% END %]
+</ul>

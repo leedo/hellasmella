@@ -1,0 +1,329 @@
+body {
+	margin: 0;
+	padding: 0 0 30px 0;
+	font: 11px Arial,sans-serif;
+	text-align: center;
+}
+
+pre {
+	font-size: 10px;
+	display: none;
+}
+
+h1 {
+	font-size: 2.2em;
+	font-weight: normal;
+	width: 700px;
+	margin: 0 auto;
+	text-align: left;
+	color: #947e56;
+	position: relative;
+}
+
+h2 {
+	font-size: 1.6em;
+	font-weight: normal;
+	color: #666;
+	border-bottom: 3px solid #eee;
+	margin: 1.2em 0 0 0;
+}
+
+div#container {
+	width: 700px;
+	padding: 0 10px;
+	margin: 0 auto;
+	text-align: left;
+	background: #fff;
+	overflow: auto;
+}
+
+div#header {
+	border-bottom: 1px solid #947e56;
+	background: #e5e0d7;
+	padding-top: 10px;
+}
+
+div.controls {
+	position: absolute;
+	top:2.2em;
+	right: 0px;
+	width: 400px;
+	text-align: right;
+}
+
+div.controls ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+div.controls li {
+	float: right;
+	padding: 0.2em 5px 0 5px;
+	border-left: 1px solid #ddd;
+	color: #999;
+	height: 1.3em;
+}
+
+div.controls li.last {
+	border-left: none;
+}
+
+div.controls a {
+	text-decoration: none;
+	color: blue;
+}
+
+div#status {
+	float: left;
+	display: block;
+	width: 200px;
+}
+
+div#status dl {
+	margin: 0;
+	padding: 0;
+}
+
+div#status dt,div#status dd {
+	width: 200px;
+	margin: 0;
+	padding: 0;
+}
+
+div#status dt {
+	padding-top: 4px;
+	color: #666;
+}
+
+div#status dd {
+	padding-bottom: 4px;
+	border-bottom: 1px solid #eee;
+	position: relative;
+}
+
+div#status .processing {
+	background: #feffb6;
+	color: #767755;
+}
+
+div#newzbin {
+	float: right;
+	display: block;
+	width: 450px;
+	position: relative;
+}
+
+div#newzbin h2 {
+	margin-bottom: 0.2em;
+}
+
+div#newzbin form {
+	display: block;
+	float: left;
+	margin-right: 15px;
+}
+
+div#newzbin div.form {
+	display: none;
+}
+
+div#newzbin div.default {
+	display: block;
+}
+
+ul.results {
+	margin: 0;
+	padding: 10px 0 0 0;
+	list-style: none;
+	display: block;
+	clear: both;
+}
+
+ul.results li {
+	margin: 0;
+	border-bottom: 1px solid #eee;
+	display: block;
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+ul.results ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul.results ul li {
+	float: right;
+	text-align: right;
+	width: auto;
+	margin-left: 10px;
+	border: none;
+}
+
+ul.results ul li.title {
+	float: left;
+	text-align: left;
+	width: 300px;
+	margin-left: 0;
+}
+
+ul.results a {
+	text-decoration: none;
+}
+
+div#queue {
+	position: relative;
+	width: 450px;
+	display: block;
+	float: right;
+}
+
+ul#queuelist, ul#completed {
+	width: 100%;
+	font-size: 11px;
+	margin: 0;
+	padding: 0;
+}
+
+ul#queuelist ul, ul#completed ul {
+	margin: 0 5px;
+	padding: 0;
+	list-style: none;
+}
+
+ul#queuelist ul li, ul#completed ul li {
+	float: right;
+	border: none;
+	padding: 0;
+	margin: 0 0 0 10px;
+	width: auto;
+	text-align: right;
+}
+
+ul#queuelist ul li.title, ul#completed ul li.title {
+	float: left;
+	width: 300px;
+	margin-left: 0;
+	text-align: left;
+}
+
+ul#queuelist ul li a {
+	color: blue;
+}
+
+ul#queuelist a {
+	text-decoration: none;
+}
+
+ul#queuelist li {
+	background: #fff;
+}
+
+ul#queuelist li, ul#completed li {
+	padding: 3px 0px 1px 0px;
+	border-bottom: 1px solid #eee;
+	list-style: none;
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+ul#queuelist li li , ul#completed li li {
+	border: none;
+}
+
+ul#queuelist li.paused {
+	background: #c73e3e;
+	border-bottom: 1px solid #c73e3e;
+	color: #fff;
+}
+
+ul#queuelist li.paused li {
+	background: #c73e3e;
+}
+
+ul#queuelist li.downloading {
+	background: #60b35e;
+	border-bottom: 1px solid #60b35e;
+	color: #fff;
+}
+
+ul#queuelist li.downloading li {
+	background: #60b35e;
+}
+
+li.completed {
+	background: #f7f7f7;
+	color: #999;
+}
+
+div#queue li.empty {
+	border: none;
+	font-style: italic;
+	color: #999;
+	border-bottom: 1px solid #fff;
+	text-align: center;
+	padding-top: 5px;
+}
+
+div#queue li.downloading a,div#queue li.paused a {
+	color: yellow;
+}
+
+div#log {
+	width: 450px;
+	float: right;
+}
+
+div#log ul {
+	list-style: none;
+	margin: 0.5em 0 0 0;
+	padding: 0;
+	display: block;
+	height: 100px;
+	overflow: auto;
+	border: 1px solid #ccc;
+}
+
+div#log li {
+	padding: 2px 4px;
+}
+
+div#log li.info {
+	color: #999;
+}
+
+div#log li.error {
+	background: #f1c9c9;
+	color: #c73e3e;
+}
+
+div#log li.warning {
+	background: #feffb6;
+	color: #767755;
+}
+
+span.note {
+	font-size: 0.6em;
+	font-style: italic;
+}
+
+.progressbar {
+	background: #f7f7f7;
+	width: 200px;
+	height: 1.6em;
+}
+
+.progresstext {
+	z-index: 9999;
+	position: absolute;
+	top: 2px;
+	left: 5px;
+}
+
+.progress {
+	background: #c2ecfe;
+	height: 1.6em;
+}

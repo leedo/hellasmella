@@ -1,0 +1,44 @@
+<h2>Queue</h2>
+
+<div class="controls" id="queuecontrols">
+[% INCLUDE controls.tt %]
+</div>
+
+<ul id="queuelist">
+	[% FOR current IN status.currently_downloading %]
+	<li id="queueitem_[% current.id | html %]" class="queueitem[% IF status.is_paused %] paused[% ELSE %] downloading[% END %]">
+		<ul>
+			<li class="title">[% current.nzbName | html %]</li> 
+			<li><a href="[% root | url %]cancel?id=[% current.id | url %]" title="remove from queue" onclick="return removemsgid([% current.id | html %],true)">remove</a></li>
+			<li>[% current.total_mb | html %]MB</li>
+		</ul>
+	</li>
+	[% END %]
+	[% FOR item IN status.queued %]
+	<li id="queueitem_[% item.id | html %]" class="queueitem">
+		<ul>
+			<li class="title">[% item.nzbName | html %]</li>
+			<li><a href="[% root | url %]cancel?id=[% item.id | url %]" title="remove from queue" onclick="return removemsgid([% item.id | html %])">remove</a></li>
+			<li>[% item.total_mb | html %]MB</li>
+		</ul>
+	</li>
+	[% END %]
+	[% IF ! status.currently_downloading.0 AND ! status.queued.0 %]
+		<li class="empty">empty...</li>
+	[% END %]
+</ul>
+
+<h2>Recently Completed</h2>
+<ul id="completed">
+	[% FOR item IN status.completed %]
+	<li class="completed">
+		<ul>
+			<li class="title">[% item.nzbName | html %]</li>
+		</ul>
+	</li>
+	[% END %]
+	[% IF ! status.completed.0 %]
+	<li class="empty">empty...</li>
+	[% END %]
+</ul>
+

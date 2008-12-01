@@ -1,0 +1,9 @@
+[% FOR result IN results %]
+<li id="search_[% result.nzbid | html %]">
+	<ul id="search_[% result.nzbid | html %]_control">
+		<li class="title"><a href="[% root | url %]add?msgid=[% result.nzbid | url %]" onclick="return addmsgid([% result.nzbid | html %])">[% result.title %]</a></li>
+		<li id="search_[% result.nzbid | html %]_more"><a href="javascript:void(0);" onclick="show_info([% result.nzbid | html %])">more</a></li>
+		<li>[% result.days | html %] days</li>
+	</ul>
+</li>
+[% END %]

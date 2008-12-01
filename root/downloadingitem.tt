@@ -1,0 +1,6 @@
+<ul>
+	<li class="title">[% nzbName | html %]</li>
+	<li><a href="[% root | url %]cancel?id=[% id | url %]" title="remove from queue" onclick="return removemsgid([% id | html %],true)">remove</a></li>
+	<li>[% total_mb | html %]MB</li>
+</ul>
+

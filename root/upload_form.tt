@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="[% root %]static/css/main.css" />
+		<script type="text/javascript" src="[% root %]static/js/prototype.js"></script>
+		<script type="text/javascript" src="[% root %]static/js/upload.js"></script>
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+				text-align: left;
+			}
+			p {
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+
+<form method="post" action="upload" id="upload" enctype="multipart/form-data" onsubmit="return check_file()">
+<input type="file" name="nzbfile" id="nzbfile" />
+<button type="submit" value="upload" id="nzbsubmit">Upload</button>
+</form>
+</body>
+</html>
